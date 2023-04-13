@@ -1,0 +1,12 @@
+<h3>Personajes</h3>
+<hr />
+<ul>
+  <li *ngFor="let personaje of personajes">
+    {{ personaje.nombre }} - {{ personaje.poder | number }}
+  </li>
+</ul>
+
+
+
+<!-- exporte el componente de personajes fuera del archivo principal -->
+<!-- con el comando ng g c podemos hacer el componente completo con todo lo que necesita en automatico -->
