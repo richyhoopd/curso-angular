@@ -2,45 +2,16 @@
 <hr />
 <div class="row">
   <div class="col">
-    <app-personajes [data]="personajes"> <!--dentro de app personajes pongo "data" que es el apodo del input, a ese input le paso personajes-->
-<!-- importamos el componente de app personajes que lo tenemos por separado -->
+    <app-personajes [data]="personajes">
+      <!--dentro de app personajes pongo "data" que es el apodo del input, a ese input le paso personajes-->
+      <!-- importamos el componente de app personajes que lo tenemos por separado -->
     </app-personajes>
-    <!-- <h3>Personajes</h3>
-    <hr />
-    <ul>
-      <li *ngFor="let personaje of personajes">
-        {{ personaje.nombre }} - {{ personaje.poder | number }}
-      </li>
-    </ul> -->
   </div>
 
   <div class="col">
     <app-agregar
-    [personajes]="personajes"
     [nuevo]="nuevo"
-    >
-  </app-agregar>
-    <!-- <h3>
-      Agregar <small>{{ nuevo.nombre }}</small>
-    </h3>
-    <hr />
-
-    <form (submit)="agregar()">
-      <input
-        type="text"
-        placeholder="Nombre"
-        name="nombre"
-        [(ngModel)]="nuevo.nombre"
-      />
-
-      <input
-        type="number"
-        placeholder="Poder"
-        name="poder"
-        [(ngModel)]="nuevo.poder"
-      />
-
-      <button type="submit">Agregar</button>
-    </form> -->
+    (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"
+    > </app-agregar>
   </div>
 </div>
